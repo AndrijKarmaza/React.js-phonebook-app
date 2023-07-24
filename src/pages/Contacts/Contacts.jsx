@@ -2,26 +2,26 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { useSelector } from 'react-redux';
-// import { useDispatch} from 'react-redux';
-// import { useEffect } from 'react';
-// import { fetchContacts } from 'redux/contacts/operations';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchContacts } from 'redux/contacts/contactsOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import {
   selectContacts,
   selectError,
   selectIsLoading,
-} from 'redux/contacts/selectors';
+} from 'redux/contacts/contactsSelectors';
 
 const Contacts = () => {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-  //   useEffect(() => {
-  //     dispatch(fetchContacts());
-  //   }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <div className="container">

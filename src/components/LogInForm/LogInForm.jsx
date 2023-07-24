@@ -1,16 +1,21 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
+import { useDispatch } from 'react-redux';
 import css from './LogInForm.module.css';
+import { logInUser } from 'redux/auth/authOperations';
 
 export const LogInForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
+    dispatch(logInUser(values));
     console.log(values);
     resetForm();
   };
 
   const schema = object({
     email: string().email().required(),
-    password: string().min(6, ' Too Short! Minimum 6 symbol').required(),
+    password: string().min(7, ' Too Short! Minimum 6 symbol').required(),
   });
 
   return (

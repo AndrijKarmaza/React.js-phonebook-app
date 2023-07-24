@@ -1,9 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
 import css from './RegisterForm.module.css';
+import { useDispatch } from 'react-redux';
+import { registerUser } from 'redux/auth/authOperations';
 
 export const RegisterForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
+    dispatch(registerUser(values));
     console.log(values);
     resetForm();
   };
@@ -11,7 +16,7 @@ export const RegisterForm = () => {
   const schema = object({
     name: string().required(),
     email: string().email().required(),
-    password: string().min(6, ' Too Short! Minimum 6 symbol').required(),
+    password: string().min(7, ' Too Short! Minimum 7 symbol').required(),
   });
 
   return (
