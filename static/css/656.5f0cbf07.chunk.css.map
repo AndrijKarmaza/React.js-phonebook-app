@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/656.5f0cbf07.chunk.css","mappings":"AAAA,2BACE,aAAc,CACd,kBACF,CAEA,2BACE,aAAc,CACd,cACF","sources":["components/RegisterForm/RegisterForm.module.css"],"sourcesContent":[".label {\n  display: block;\n  margin-bottom: 10px;\n}\n\n.input {\n  display: block;\n  margin-top: 4px;\n}\n"],"names":[],"sourceRoot":""}
