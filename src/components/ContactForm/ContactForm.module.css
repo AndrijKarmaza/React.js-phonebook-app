@@ -1,23 +1,19 @@
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 16px;
   width: 300px;
 }
 
-.form label {
-  display: flex;
-  flex-direction: column;
-}
-
-input {
-  margin-bottom: 16px;
-  padding: 8px;
-  border: 1px solid #0080ff;
-  border-radius: 4px;
-}
-
-input:focus-visible {
-  border: 1px solid green;
+.input {
+  display: block;
+  margin-top: 4px;
 }
 
 .labelText {
@@ -25,17 +21,7 @@ input:focus-visible {
   font-weight: bolder;
 }
 
-.btnAdd {
-  background-color: #d3d3d3;
-  border: 1px solid#0080ff;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 8px 12px;
-  width: 150px;
-}
-
-.btnAdd:hover,
-.btnAdd:focus {
-  background-color: #0080ff;
+.label div {
+  font-size: 14px;
+  color: red;
 }

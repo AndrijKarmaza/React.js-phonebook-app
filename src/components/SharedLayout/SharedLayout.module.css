@@ -8,28 +8,5 @@
 header {
   border-bottom: 2px solid#444c5c;
   margin-bottom: 24px;
-}
-
-.navigation {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-
-.nav_link {
-  display: block;
-  min-width: 80px;
-  padding: 8px 8px;
-  background-color: #e1b16a;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-
-  margin-right: 50px;
-}
-
-.nav_link:hover {
-  background-color: #78a5a3;
-  color: #fff;
+  padding: 8px 0;
 }

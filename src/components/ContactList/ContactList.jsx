@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/contactsOperations';
 import css from './ContactList.module.css';
 import { selectFilteredContacts } from 'redux/contacts/contactsSelectors';
-
+import { Button } from '@chakra-ui/react';
 export const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
@@ -11,15 +11,17 @@ export const ContactList = () => {
     <ul className={css.contact_list}>
       {contacts.map(({ id, name, number }) => (
         <li className={css.contact_item} key={id}>
-          <p className={css.contact_data}>
+          <p>
             {name} : {number}
           </p>
-          <button
-            className={css.contact_btn}
+          <Button
+            colorScheme="teal"
+            variant="solid"
+            size={'sm'}
             onClick={() => dispatch(deleteContact(id))}
           >
             Delete
-          </button>
+          </Button>
         </li>
       ))}
     </ul>

@@ -5,6 +5,7 @@ import { addContact } from 'redux/contacts/contactsOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './ContactForm.module.css';
 import { selectContacts } from 'redux/contacts/contactsSelectors';
+import { Button, Input } from '@chakra-ui/react';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -15,7 +16,6 @@ export const ContactForm = () => {
     contacts.find(element => element.name === values.name)
       ? Notify.info(`${values.name} is already in contacts.`)
       : dispatch(addContact(values));
-    console.log(values);
     resetForm();
   };
 
@@ -32,18 +32,28 @@ export const ContactForm = () => {
     >
       <Form className={css.form}>
         <label className={css.label}>
-          <span className={css.labelText}>Name</span>
+          Name
           <ErrorMessage component="div" name="name" />
-          <Field type="text" name="name" className={css.input}></Field>
+          <Field
+            as={Input}
+            type="text"
+            name="name"
+            className={css.input}
+          ></Field>
         </label>
         <label className={css.label}>
-          <span className={css.labelText}>Number</span>
+          Number
           <ErrorMessage component="div" name="number" />
-          <Field type="tel" name="number" className={css.input}></Field>
+          <Field
+            as={Input}
+            type="tel"
+            name="number"
+            className={css.input}
+          ></Field>
         </label>
-        <button type="submit" className={css.btnAdd}>
+        <Button colorScheme="teal" variant="solid" type="submit">
           Add contact
-        </button>
+        </Button>
       </Form>
     </Formik>
   );

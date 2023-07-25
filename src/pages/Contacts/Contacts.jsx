@@ -12,6 +12,7 @@ import {
   selectError,
   selectIsLoading,
 } from 'redux/contacts/contactsSelectors';
+import css from './Contacts.module.css';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -24,10 +25,9 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
-      <h1>Phonebook</h1>
+    <div className={css.container}>
       <ContactForm />
-      <h2>Contacts</h2>
+      <h2>Contact list</h2>
       <Filter />
       {isLoading && Loading.standard('Loading')}
       {!isLoading && Loading.remove()}

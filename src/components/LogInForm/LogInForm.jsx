@@ -6,6 +6,7 @@ import { logInUser } from 'redux/auth/authOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { getErrorUser, getIsLoadingUser } from 'redux/auth/authSelectors';
+import { Button, Input } from '@chakra-ui/react';
 
 export const LogInForm = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export const LogInForm = () => {
 
   const schema = object({
     email: string().email().required(),
-    password: string().min(7, ' Too Short! Minimum 6 symbol').required(),
+    password: string().min(7, ' Too Short! Minimum 7 symbol').required(),
   });
 
   return (
@@ -36,18 +37,20 @@ export const LogInForm = () => {
         onSubmit={handleSubmit}
         validationSchema={schema}
       >
-        <Form>
+        <Form className={css.form}>
           <label className={css.label}>
             Email
             <ErrorMessage component="div" name="email" />
-            <Field type="mail" name="email" className={css.input}></Field>
+            <Field as={Input} type="mail" name="email"></Field>
           </label>
           <label className={css.label}>
             Password
             <ErrorMessage component="div" name="password" />
-            <Field type="text" name="password" className={css.input}></Field>
+            <Field as={Input} type="text" name="password"></Field>
           </label>
-          <button type="submit">Log in</button>
+          <Button colorScheme="teal" variant="solid" type="submit">
+            Log in
+          </Button>
         </Form>
       </Formik>
     </>
