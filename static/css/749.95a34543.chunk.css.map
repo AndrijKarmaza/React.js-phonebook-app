@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/749.95a34543.chunk.css","mappings":"AAAA,wBACE,aAAc,CACd,kBACF,CAEA,wBACE,aAAc,CACd,cACF","sources":["components/LogInForm/LogInForm.module.css"],"sourcesContent":[".label {\n  display: block;\n  margin-bottom: 10px;\n}\n\n.input {\n  display: block;\n  margin-top: 4px;\n}\n"],"names":[],"sourceRoot":""}
